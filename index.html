@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Weather Assistant</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Search Section -->
+        <div class="search-section">
+            <h1 class="title">🌤️ AI Weather Assistant</h1>
+            <p class="subtitle">Get weather updates with personalized AI insights</p>
+            
+            <div class="search-box">
+                <input type="text" id="cityInput" placeholder="Enter city name..." class="search-input">
+                <button id="searchBtn" class="search-btn">
+                    <span class="btn-text">Search</span>
+                    <span class="btn-icon">🔍</span>
+                </button>
+            </div>
+        </div>
+
+        <div id="mainContent" class="main-content hidden">
+            <!-- Left Panel - Weather Data -->
+            <div class="left-panel">
+                <div class="weather-card">
+                    <div class="location">
+                        <h2 id="cityName"></h2>
+                        <p id="date"></p>
+                    </div>
+
+                    <div class="weather-icon-container">
+                        <div id="weatherIcon" class="weather-icon"></div>
+                        <div id="temperature" class="temperature"></div>
+                    </div>
+
+                    <div id="description" class="description"></div>
+
+                    <div class="weather-details">
+                        <div class="detail-item">
+                            <span class="icon">💨</span>
+                            <div>
+                                <p class="detail-label">Wind Speed</p>
+                                <p id="windSpeed" class="detail-value"></p>
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <span class="icon">💧</span>
+                            <div>
+                                <p class="detail-label">Humidity</p>
+                                <p id="humidity" class="detail-value"></p>
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <span class="icon">🌡️</span>
+                            <div>
+                                <p class="detail-label">Feels Like</p>
+                                <p id="feelsLike" class="detail-value"></p>
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <span class="icon">🌅</span>
+                            <div>
+                                <p class="detail-label">Sunrise</p>
+                                <p id="sunrise" class="detail-value"></p>
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <span class="icon">🌇</span>
+                            <div>
+                                <p class="detail-label">Sunset</p>
+                                <p id="sunset" class="detail-value"></p>
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <span class="icon">👁️</span>
+                            <div>
+                                <p class="detail-label">Visibility</p>
+                                <p id="visibility" class="detail-value"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Panel - AI Insights -->
+            <div class="right-panel">
+                <div class="ai-card">
+                    <div class="ai-header">
+                        <span class="ai-icon">🤖</span>
+                        <h3>AI Weather Insights</h3>
+                    </div>
+                    
+                    <div id="aiInsights" class="ai-content">
+                        <div class="loading-spinner">
+                            <div class="spinner"></div>
+                            <p>Generating AI insights...</p>
+                        </div>
+                    </div>
+
+                    <div class="ai-sections">
+                        <div class="insight-section">
+                            <div class="section-icon">👕</div>
+                            <div class="section-content">
+                                <h4>Outfit Recommendation</h4>
+                                <p id="outfitAdvice" class="section-text"></p>
+                            </div>
+                        </div>
+
+                        <div class="insight-section">
+                            <div class="section-icon">💡</div>
+                            <div class="section-content">
+                                <h4>Activity Suggestions</h4>
+                                <p id="activityAdvice" class="section-text"></p>
+                            </div>
+                        </div>
+
+                        <div class="insight-section">
+                            <div class="section-icon">⚠️</div>
+                            <div class="section-content">
+                                <h4>Weather Tips</h4>
+                                <p id="weatherTips" class="section-text"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="errorMessage" class="error-message hidden"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
